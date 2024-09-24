@@ -31,25 +31,26 @@
             </div>
             <!-- Org logo end -->
 
-            <!-- Current balance start (Nav-end) -->
+            <!-- Current account balance start (Nav-end) -->
             <div class="navbar-end">
                 <h3 class="text-xl font-bold flex items-center"><img class="mr-2 w-5" src="assets/coin.png" alt="">
                     <!-- Balance Amount -->
-                    <span id="">55000</span>
+                    <span class="account-balance-amount" id="account-balance-amount">55000</span>
                     <span class="ml-2">BDT</span>
                 </h3>
             </div>
-            <!-- Current balance end -->
+            <!-- Current account balance end -->
         </div>
         <div class="flex justify-center space-x-5 py-5">
-            <button class="btn btn-outline border-lime-900 text-lime-900 w-36">Donation</button>
-            <button class="btn btn-outline border-lime-900 text-lime-900 w-36">History</button>
+            <button id="btn-donation" class="btn bg-lime-400 font-bold text-lime-900 w-36">Donation</button>
+            <button id="btn-history" class="btn btn-outline border-lime-900 text-lime-900 w-36">History</button>
         </div>
     </header>
     <main>
-        <section class="px-24 py-10">
+        <!-- Section: Donation -->
+        <section id="donation-section" class="px-24 py-10 ">
             <!-- Card 1 start: Noakhali -->
-            <div class="flex p-5 border rounded-lg items-center my-5 flex-col lg:flex-row">
+            <div class="noakhali flex p-5 border rounded-lg items-center my-5 flex-col lg:flex-row">
                 <!-- image -->
                 <img class="w-1/3 h-80 lg:mr-16 object-cover object-right-top rounded-md mb-10 lg:mb-0"
                     src="assets/noakhali.png" alt="">
@@ -59,7 +60,7 @@
                         class="p-1 mb-5 w-fit bg-gray-200 rounded-md text-sm font-bold flex items-center justify-center">
                         <img class="mr-1 w-4" src="assets/coin.png" alt="">
                         <!-- Fund Cullected -->
-                        <span id="">0</span>
+                        <span class="donated-amount" id="donated-amount">0</span>
                         <span class="ml-1">BDT</span>
                     </h5>
                     <h3 class="font-bold text-lg">Donate for Flood at Noakhali, Bangladesh</h3>
@@ -74,9 +75,10 @@
                     <br>
 
                     <!-- Modal 1 -->
-                    <button id="btn-donate" class="btn w-full btn px-10 bg-lime-300 text-lg font-bold"
-                        onclick="my_modal_5.showModal()">Donate Now</button>
-                    <dialog id="my-modal-1" class="modal modal-bottom sm:modal-middle">
+                    <button id="btn-donate" class="btn-donate btn w-full btn px-10 bg-lime-300 text-lg font-bold"
+                        >Donate Now</button>
+                        <!-- onclick="my_modal_5.showModal()" -->
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
                             <h3 class="text-lg font-bold">Hello!</h3>
                             <p class="py-4">Press ESC key or click the button below to close</p>
@@ -102,7 +104,7 @@
                         class="p-1 mb-5 w-fit bg-gray-200 rounded-md text-sm font-bold flex items-center justify-center">
                         <img class="mr-1 w-4" src="assets/coin.png" alt="">
                         <!-- Fund Cullected -->
-                        <span id="">0</span>
+                        <span class="donated-amount" id="">0</span>
                         <span class="ml-1">BDT</span>
                     </h5>
                     <h3 class="font-bold text-lg">Donate for Flood at Feni, Bangladesh</h3>
@@ -117,7 +119,7 @@
                     <br>
 
                     <!-- Modal 2 -->
-                    <button class="btn w-full btn px-10 bg-lime-300 text-lg font-bold"
+                    <button class="btn-donate btn w-full btn px-10 bg-lime-300 text-lg font-bold"
                         onclick="my_modal_5.showModal()">Donate Now</button>
                     <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
@@ -144,7 +146,7 @@
                         class="p-1 mb-5 w-fit bg-gray-200 rounded-md text-sm font-bold flex items-center justify-center">
                         <img class="mr-1 w-4" src="assets/coin.png" alt="">
                         <!-- Fund Cullected -->
-                        <span id="">0</span>
+                        <span class="donated-amount" id="">0</span>
                         <span class="ml-1">BDT</span>
                     </h5>
                     <h3 class="font-bold text-lg">Aid for Injured in the Quota Movement</h3>
@@ -160,7 +162,7 @@
                     <br>
 
                     <!-- Modal 3 -->
-                    <button class="w-full btn px-10 bg-lime-300 text-lg font-bold"
+                    <button class="btn-donate w-full btn px-10 bg-lime-300 text-lg font-bold"
                         onclick="my_modal_5.showModal()">Donate Now</button>
                     <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
@@ -179,12 +181,44 @@
             <!-- Card 3 card -->
 
         </section>
+        <section id="history-section" class=""></section>
     </main>
     <footer></footer>
 
 
 
     <script src="js/utilities.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        // Get references to the button and the modal
+        // const donateButton = document.querySelector('.btn-donate');
+        // const modal1 = document.getElementById('my_modal_5');
+
+
+        // Add a click event listener to the button
+        // donateButton.addEventListener('click', () => {
+            // Show the modal when the button is clicked
+            // modal1.showModal();
+        // });
+
+
+        // // Donation calculation
+        // const donateNowButton = document.getElementById('btn-donate');
+        // donateNowButton.addEventListener("click", function(){
+        //     // declaration
+        //     const donationAmount = parseFloat(document.querySelector('.donation-amount').value);
+        //     const donatedAmount = parseFloat(document.querySelector('.donated-amount').innerText);
+        //     const accountBalanceAmount = parseFloat(document.querySelector('.account-balance-amount').innerText);
+
+        //     // calculation
+        //     const addAmount = donatedAmount + donationAmount;
+        //     document.querySelector('.donated-amount').innerText = addAmount;
+        //     const subtractAmount = accountBalanceAmount - donationAmount;
+        //     document.querySelector('.account-balance-amount').innerText = subtractAmount;
+        //     // const divCalculated = document.querySelector('.noakhali')
+        // })
+
+    </script>
 </body>
 
 </html>
