@@ -38,12 +38,14 @@
                         donation will help provide essential supplies and to those affected by this disaster. Every
                         contribution, big or small, makes difference. Please join us in supporting the relief efforts
                         and making a positive impact on the lives of those in need.</p>
-                    <input class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
+                    <input id="donation-amount" class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
                         placeholder="Write Donation Amount">
                     <br>
-                    <button class="btn w-full btn px-10 bg-lime-300 text-lg font-bold"
+
+                    <!-- Modal 1 -->
+                    <button id="btn-donate" class="btn w-full btn px-10 bg-lime-300 text-lg font-bold"
                         onclick="my_modal_5.showModal()">Donate Now</button>
-                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <dialog id="my-modal-1" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
                             <h3 class="text-lg font-bold">Hello!</h3>
                             <p class="py-4">Press ESC key or click the button below to close</p>
@@ -82,9 +84,11 @@
                     <input class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
                         placeholder="Write Donation Amount">
                     <br>
+
+                    <!-- Modal 2 -->
                     <button class="btn w-full btn px-10 bg-lime-300 text-lg font-bold"
                         onclick="my_modal_5.showModal()">Donate Now</button>
-                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
                             <h3 class="text-lg font-bold">Hello!</h3>
                             <p class="py-4">Press ESC key or click the button below to close</p>
@@ -123,9 +127,11 @@
                     <input class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
                         placeholder="Write Donation Amount">
                     <br>
+
+                    <!-- Modal 3 -->
                     <button class="w-full btn px-10 bg-lime-300 text-lg font-bold"
                         onclick="my_modal_5.showModal()">Donate Now</button>
-                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
                             <h3 class="text-lg font-bold">Hello!</h3>
                             <p class="py-4">Press ESC key or click the button below to close</p>
@@ -140,6 +146,7 @@
                 </div>
             </div>
             <!-- Card 3 card -->
+
         </section>
     </main>
 
@@ -147,6 +154,27 @@
 
 
     <script src="js/utilities.js"></script>
+    <script>
+        // Get references to the button and the modal
+        const donateButton = document.querySelector('.btn');
+        const modal1 = document.getElementById('my-modal-1');
+
+
+        // Add a click event listener to the button
+        donateButton.addEventListener('click', () => {
+            // Show the modal when the button is clicked
+            modal1.showModal();
+        });
+
+
+        // Donation calculation
+        const donateNowButton = document.getElementById('btn-donate');
+        donateNowButton.addEventListener("click", function(){
+            const donationAmount = document.getElementById('donation-amount'),
+            const
+        })
+
+    </script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoNation</title>
+    <title>BanDoNation</title>
     <!-- Font Awsome cdn -->
     <script src="https://kit.fontawesome.com/64bd0d6f87.js" crossorigin="anonymous"></script>
     <!-- DaisyUi & Tailwind cdn -->
@@ -14,7 +14,38 @@
 </head>
 
 <body>
-    <header></header>
+    <header class="sticky top-0 backdrop-blur-lg">
+        <div class="navbar bg-orange-100 bg-opacity-50 flex items-center py-5">
+            <!-- Blog btn start (Nav-start) -->
+            <div class="navbar-start">
+                <div class="navbar-end">
+                    <a class="btn px-10 bg-lime-300 text-lg font-bold">BLOG</a>
+                </div>
+            </div>
+            <!-- Blog btn end -->
+
+            <!-- Org logo start (Nav-center) -->
+            <div class="navbar-center">
+                <a class="flex items-center text-xl font-bold"><img class="mr-3 w-7" src="assets/logo.png"
+                        alt="">BanDoNation</a>
+            </div>
+            <!-- Org logo end -->
+
+            <!-- Current balance start (Nav-end) -->
+            <div class="navbar-end">
+                <h3 class="text-xl font-bold flex items-center"><img class="mr-2 w-5" src="assets/coin.png" alt="">
+                    <!-- Balance Amount -->
+                    <span id="">55000</span>
+                    <span class="ml-2">BDT</span>
+                </h3>
+            </div>
+            <!-- Current balance end -->
+        </div>
+        <div class="flex justify-center space-x-5 py-5">
+            <button class="btn btn-outline border-lime-900 text-lime-900 w-36">Donation</button>
+            <button class="btn btn-outline border-lime-900 text-lime-900 w-36">History</button>
+        </div>
+</header>
     <main></main>
     <footer></footer>
 
