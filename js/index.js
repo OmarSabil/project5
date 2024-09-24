@@ -1,15 +1,16 @@
-/* ***** - nav: Donation & History */ 
 // global declaration
 const donationSection = document.getElementById('donation-section')
 const historySection = document.getElementById('history-section')
 const donationButton = document.getElementById('btn-donation')
 const historyButton = document.getElementById('btn-history')
 
+
+/* ***** - nav: Donation & History */
 donationButton.addEventListener("click", function () {
     donationButton.classList.add(
         "bg-lime-400",
         "font-bold"
-    );
+    )
     donationButton.classList.remove(
         "btn-outline",
         "border-lime-900"
@@ -25,7 +26,7 @@ donationButton.addEventListener("click", function () {
     donationSection.classList.remove(
         "hidden"
     )
-    historySectionSection.classList.add(
+    historySection.classList.add(
         "hidden"
     )
 
@@ -34,7 +35,7 @@ historyButton.addEventListener("click", function () {
     historyButton.classList.add(
         "bg-lime-400",
         "font-bold"
-    );
+    )
     historyButton.classList.remove(
         "btn-outline",
         "border-lime-900"
@@ -53,5 +54,53 @@ historyButton.addEventListener("click", function () {
     historySection.classList.remove(
         "hidden"
     )
+})
 
+
+
+
+
+const donateNowButton1 = document.getElementById('noakhali-btn');
+donateNowButton1.addEventListener("click", function () {
+
+    const donationInput = getDonationById('noakhali-input');
+    const totalDonation = donationDistribute('noakhali-total');
+    const accountBalanceAmount = donationDistribute('account-balance-amount');
+
+
+    const newBalanceRemaining = accountBalanceAmount - donationInput;
+    document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+
+    const newDonatedTotal = totalDonation + donationInput;
+    document.getElementById('noakhali-total').innerText = newDonatedTotal;
+})
+
+const donateNowButton2 = document.getElementById('feni-btn');
+donateNowButton2.addEventListener("click", function () {
+
+    const donationInput = getDonationById('feni-input');
+    const totalDonation = donationDistribute('feni-total');
+    const accountBalanceAmount = donationDistribute('account-balance-amount');
+
+
+    const newBalanceRemaining = accountBalanceAmount - donationInput;
+    document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+
+    const newDonatedTotal = totalDonation + donationInput;
+    document.getElementById('feni-total').innerText = newDonatedTotal;
+})
+
+const donateNowButton3 = document.getElementById('quota-btn');
+donateNowButton3.addEventListener("click", function () {
+
+    const donationInput = getDonationById('quota-input');
+    const totalDonation = donationDistribute('quota-total');
+    const accountBalanceAmount = donationDistribute('account-balance-amount');
+
+
+    const newBalanceRemaining = accountBalanceAmount - donationInput;
+    document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+
+    const newDonatedTotal = totalDonation + donationInput;
+    document.getElementById('quota-total').innerText = newDonatedTotal;
 })

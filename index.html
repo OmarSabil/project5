@@ -46,9 +46,12 @@
             <button id="btn-history" class="btn btn-outline border-lime-900 text-lime-900 w-36">History</button>
         </div>
     </header>
+
+    <!-- Main -->
     <main>
         <!-- Section: Donation -->
         <section id="donation-section" class="px-24 py-10 ">
+
             <!-- Card 1 start: Noakhali -->
             <div class="noakhali flex p-5 border rounded-lg items-center my-5 flex-col lg:flex-row">
                 <!-- image -->
@@ -59,8 +62,9 @@
                     <h5
                         class="p-1 mb-5 w-fit bg-gray-200 rounded-md text-sm font-bold flex items-center justify-center">
                         <img class="mr-1 w-4" src="assets/coin.png" alt="">
-                        <!-- Fund Cullected -->
-                        <span class="donated-amount" id="donated-amount">0</span>
+
+                        <!-- Output: Fund Cullected -->
+                        <span id="noakhali-total">0</span>
                         <span class="ml-1">BDT</span>
                     </h5>
                     <h3 class="font-bold text-lg">Donate for Flood at Noakhali, Bangladesh</h3>
@@ -70,57 +74,15 @@
                         donation will help provide essential supplies and to those affected by this disaster. Every
                         contribution, big or small, makes difference. Please join us in supporting the relief efforts
                         and making a positive impact on the lives of those in need.</p>
-                    <input id="donation-amount" class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
+                    <!-- Input -->
+                    <input id="noakhali-input" class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
                         placeholder="Write Donation Amount">
                     <br>
 
+                    <!-- btn -->
+                    <button id="noakhali-btn" class="btn w-full btn px-10 bg-lime-300 text-lg font-bold">Donate
+                        Now</button>
                     <!-- Modal 1 -->
-                    <button id="btn-donate" class="btn-donate btn w-full btn px-10 bg-lime-300 text-lg font-bold"
-                        >Donate Now</button>
-                        <!-- onclick="my_modal_5.showModal()" -->
-                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-                        <div class="modal-box">
-                            <h3 class="text-lg font-bold">Hello!</h3>
-                            <p class="py-4">Press ESC key or click the button below to close</p>
-                            <div class="modal-action">
-                                <form method="dialog">
-                                    <!-- if there is a button in form, it will close the modal -->
-                                    <button class="btn">Close</button>
-                                </form>
-                            </div>
-                        </div>
-                    </dialog>
-                </div>
-            </div>
-            <!-- Card 1 end -->
-
-            <!-- Card 2 start: Feni -->
-            <div class="flex p-5 border rounded-lg items-center my-5 flex-col lg:flex-row">
-                <!-- image -->
-                <img class="w-1/3 h-80 lg:mr-16 rounded-md mb-10 lg:mb-0" src="assets/feni.png" alt="">
-                <!-- details -->
-                <div class="h-full w-2/3">
-                    <h5
-                        class="p-1 mb-5 w-fit bg-gray-200 rounded-md text-sm font-bold flex items-center justify-center">
-                        <img class="mr-1 w-4" src="assets/coin.png" alt="">
-                        <!-- Fund Cullected -->
-                        <span class="donated-amount" id="">0</span>
-                        <span class="ml-1">BDT</span>
-                    </h5>
-                    <h3 class="font-bold text-lg">Donate for Flood at Feni, Bangladesh</h3>
-                    <p class="max-h-24 overflow-scroll">The recent floods in Feni have devastated local communities,
-                        leading to severe disruption and loss. Your generous donation will help provide immediate aid,
-                        including food, clean water, and medical supplies, to those affected by this calamity. Together,
-                        we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every
-                        contribution counts towards making a real difference. Please consider donating today to assist
-                        those in urgent need.</p>
-                    <input class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
-                        placeholder="Write Donation Amount">
-                    <br>
-
-                    <!-- Modal 2 -->
-                    <button class="btn-donate btn w-full btn px-10 bg-lime-300 text-lg font-bold"
-                        onclick="my_modal_5.showModal()">Donate Now</button>
                     <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
                             <h3 class="text-lg font-bold">Hello!</h3>
@@ -135,7 +97,53 @@
                     </dialog>
                 </div>
             </div>
-            <!-- Card 2 end -->
+
+            <!-- Card 2 start: Feni -->
+            <div class="flex p-5 border rounded-lg items-center my-5 flex-col lg:flex-row">
+                <!-- image -->
+                <img class="w-1/3 h-80 lg:mr-16 rounded-md mb-10 lg:mb-0" src="assets/feni.png" alt="">
+                <!-- details -->
+                <div class="h-full w-2/3">
+                    <h5
+                        class="p-1 mb-5 w-fit bg-gray-200 rounded-md text-sm font-bold flex items-center justify-center">
+                        <img class="mr-1 w-4" src="assets/coin.png" alt="">
+                        <!-- Output: Fund Cullected -->
+                        <span id="feni-total">0</span>
+                        <span class="ml-1">BDT</span>
+                    </h5>
+                    <h3 class="font-bold text-lg">Donate for Flood at Feni, Bangladesh</h3>
+                    <p class="max-h-24 overflow-scroll">The recent floods in Feni have devastated local communities,
+                        leading to severe disruption and loss. Your generous donation will help provide immediate aid,
+                        including food, clean water, and medical supplies, to those affected by this calamity. Together,
+                        we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every
+                        contribution counts towards making a real difference. Please consider donating today to assist
+                        those in urgent need.</p>
+
+                        <!-- Input -->
+                    <input id="feni-input" class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
+                        placeholder="Write Donation Amount">
+                    <br>
+
+                    <!-- btn -->
+                    <button id="feni-btn" class="btn w-full btn px-10 bg-lime-300 text-lg font-bold">Donate
+                        Now</button>
+                                            <!-- Modal 2 -->
+
+                    <!-- onclick="my_modal_5.showModal()" -->
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Hello!</h3>
+                            <p class="py-4">Press ESC key or click the button below to close</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                </div>
+            </div>
 
             <!-- Card 3 start: Quota Movement Aid -->
             <div class="flex p-5 border rounded-lg items-center my-5 flex-col lg:flex-row">
@@ -145,8 +153,9 @@
                     <h5
                         class="p-1 mb-5 w-fit bg-gray-200 rounded-md text-sm font-bold flex items-center justify-center">
                         <img class="mr-1 w-4" src="assets/coin.png" alt="">
-                        <!-- Fund Cullected -->
-                        <span class="donated-amount" id="">0</span>
+
+                        <!-- Output: Fund Cullected -->
+                        <span id="quota-total">0</span>
                         <span class="ml-1">BDT</span>
                     </h5>
                     <h3 class="font-bold text-lg">Aid for Injured in the Quota Movement</h3>
@@ -157,13 +166,17 @@
                         time. Every donation plays a vital role in alleviating their suffering and aiding in their
                         recovery. Please consider making a donation to support these brave individuals in their time of
                         need.</p>
-                    <input class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
+
+                        <!-- Input -->
+                    <input id="quota-input" class="w-full bg-gray-50 border rounded-md p-1 pl-5 my-5" type="text"
                         placeholder="Write Donation Amount">
                     <br>
 
-                    <!-- Modal 3 -->
-                    <button class="btn-donate w-full btn px-10 bg-lime-300 text-lg font-bold"
-                        onclick="my_modal_5.showModal()">Donate Now</button>
+                    <!-- btn -->
+                    <button id="quota-btn" class="w-full btn px-10 bg-lime-300 text-lg font-bold"
+                        >Donate Now</button>
+                        <!-- onclick="my_modal_5.showModal()" -->
+                        <!-- Modal 3 -->
                     <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
                             <h3 class="text-lg font-bold">Hello!</h3>
@@ -178,10 +191,10 @@
                     </dialog>
                 </div>
             </div>
-            <!-- Card 3 card -->
-
         </section>
-        <section id="history-section" class=""></section>
+        <section id="history-section" class="px-24 py-10 hidden">
+            <h1>yo yo world</h1>
+        </section>
     </main>
     <footer></footer>
 
@@ -197,26 +210,13 @@
 
         // Add a click event listener to the button
         // donateButton.addEventListener('click', () => {
-            // Show the modal when the button is clicked
-            // modal1.showModal();
+        // Show the modal when the button is clicked
+        // modal1.showModal();
         // });
 
 
         // // Donation calculation
-        // const donateNowButton = document.getElementById('btn-donate');
-        // donateNowButton.addEventListener("click", function(){
-        //     // declaration
-        //     const donationAmount = parseFloat(document.querySelector('.donation-amount').value);
-        //     const donatedAmount = parseFloat(document.querySelector('.donated-amount').innerText);
-        //     const accountBalanceAmount = parseFloat(document.querySelector('.account-balance-amount').innerText);
 
-        //     // calculation
-        //     const addAmount = donatedAmount + donationAmount;
-        //     document.querySelector('.donated-amount').innerText = addAmount;
-        //     const subtractAmount = accountBalanceAmount - donationAmount;
-        //     document.querySelector('.account-balance-amount').innerText = subtractAmount;
-        //     // const divCalculated = document.querySelector('.noakhali')
-        // })
 
     </script>
 </body>
