@@ -12,7 +12,7 @@ const footer = document.getElementById('footer');
 
 const blogButton = document.getElementById('blog-btn')
 blogButton.addEventListener("click", function(){
-    window.location.href = "/blog.html";
+    window.location.href = "/project5/blog.html";
 })
 /* ***** - Nav: Donation & History tab functionals - ***** */
 donationButton.addEventListener("click", function () {
