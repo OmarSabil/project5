@@ -5,7 +5,7 @@ const donationButton = document.getElementById('btn-donation')
 const historyButton = document.getElementById('btn-history')
 
 
-/* ***** - nav: Donation & History */
+/* ***** - Nav: Donation & History tab functionals - ***** */
 donationButton.addEventListener("click", function () {
     donationButton.classList.add(
         "bg-lime-400",
@@ -54,12 +54,13 @@ historyButton.addEventListener("click", function () {
     historySection.classList.remove(
         "hidden"
     )
+
 })
 
 
 
 
-
+/* ***** - Main: Donation Functionals - ***** */
 const donateNowButton1 = document.getElementById('noakhali-btn');
 donateNowButton1.addEventListener("click", function () {
 
@@ -104,3 +105,11 @@ donateNowButton3.addEventListener("click", function () {
     const newDonatedTotal = totalDonation + donationInput;
     document.getElementById('quota-total').innerText = newDonatedTotal;
 })
+
+/* ***** - Main: History Functionals - ***** */
+document.getElementById("donation-history").classList.add("hidden");
+
+
+
+
+
