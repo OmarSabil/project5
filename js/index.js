@@ -1,8 +1,12 @@
 // global declaration
-const donationSection = document.getElementById('donation-section')
-const historySection = document.getElementById('history-section')
-const donationButton = document.getElementById('btn-donation')
-const historyButton = document.getElementById('btn-history')
+const donationSection = document.getElementById('donation-section');
+const historySection = document.getElementById('history-section');
+const donationButton = document.getElementById('btn-donation');
+const historyButton = document.getElementById('btn-history');
+
+const noakhaliTitle = document.getElementById('noakhali-title');
+const feniTitle = document.getElementById('feni-title');
+const quotaTitle = document.getElementById('quota-title');
 
 
 /* ***** - Nav: Donation & History tab functionals - ***** */
@@ -61,6 +65,7 @@ historyButton.addEventListener("click", function () {
 
 
 /* ***** - Main: Donation Functionals - ***** */
+// Noakhali Flood Donation
 const donateNowButton1 = document.getElementById('noakhali-btn');
 donateNowButton1.addEventListener("click", function () {
 
@@ -68,14 +73,47 @@ donateNowButton1.addEventListener("click", function () {
     const totalDonation = donationDistribute('noakhali-total');
     const accountBalanceAmount = donationDistribute('account-balance-amount');
 
+    // add Modal Noakhali
+    const myModal = document.getElementById('my_modal_5')
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        my_modal_5.showModal()
+    }
+    else {
+        alert("Donation Amount is Invalid")
+    }
 
+
+    // Calculations
     const newBalanceRemaining = accountBalanceAmount - donationInput;
-    document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+    }
+
 
     const newDonatedTotal = totalDonation + donationInput;
-    document.getElementById('noakhali-total').innerText = newDonatedTotal;
-})
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        document.getElementById('noakhali-total').innerText = newDonatedTotal;
+    }
 
+    // Noakhali History
+    const historyItems = document.createElement("div");
+    historyItems.id = "history-items";
+    historyItems.classList =
+        "border-2 w-full h-28 p-5 rounded-md";
+
+    historyItems.innerHTML = `
+    <p>$${newDonatedTotal.toFixed(2)} taka is donated for ${noakhaliTitle.innerText}</p>
+    <p class="">Date: ${new Date().toLocaleDateString()}</p>
+    `
+
+    const historyContainer = document.getElementById("history-section");
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+    historyContainer.insertBefore(historyItems, historyContainer.appendChild(historyItems));
+    }
+
+});
+
+// Feni Flood Donation
 const donateNowButton2 = document.getElementById('feni-btn');
 donateNowButton2.addEventListener("click", function () {
 
@@ -83,14 +121,44 @@ donateNowButton2.addEventListener("click", function () {
     const totalDonation = donationDistribute('feni-total');
     const accountBalanceAmount = donationDistribute('account-balance-amount');
 
+    // add Modal Feni
+    const myModal = document.getElementById('my_modal_5')
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        my_modal_5.showModal()
+    }
+    else {
+        alert("Donation Amount is Invalid");
+    }
 
+
+    // Calculations
     const newBalanceRemaining = accountBalanceAmount - donationInput;
-    document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+    }
 
     const newDonatedTotal = totalDonation + donationInput;
-    document.getElementById('feni-total').innerText = newDonatedTotal;
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        document.getElementById('feni-total').innerText = newDonatedTotal;
+    }
+
+    // Feni History
+    const historyItems = document.createElement("div");
+    historyItems.classList =
+        "border-2 w-full h-28 p-5 rounded-md";
+
+    historyItems.innerHTML = `
+    <p>$${newDonatedTotal.toFixed(2)} taka is donated for ${feniTitle.innerText}</p>
+    <p class="">${new Date().toLocaleDateString()}</p>
+    `
+    const historyContainer = document.getElementById("history-section");
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+    historyContainer.insertBefore(historyItems, historyContainer.firstChild);
+    }
 })
 
+
+// Quota Injured Donation
 const donateNowButton3 = document.getElementById('quota-btn');
 donateNowButton3.addEventListener("click", function () {
 
@@ -99,15 +167,42 @@ donateNowButton3.addEventListener("click", function () {
     const accountBalanceAmount = donationDistribute('account-balance-amount');
 
 
-    const newBalanceRemaining = accountBalanceAmount - donationInput;
-    document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+    // add Modal Quota
+    const myModal = document.getElementById('my_modal_5')
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        my_modal_5.showModal()
+    }
+    else {
+        alert("Donation Amount is Invalid")
+    }
 
+    // Calculations
+    const newBalanceRemaining = accountBalanceAmount - donationInput;
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        document.getElementById('account-balance-amount').innerText = newBalanceRemaining;
+    }
     const newDonatedTotal = totalDonation + donationInput;
-    document.getElementById('quota-total').innerText = newDonatedTotal;
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+        document.getElementById('quota-total').innerText = newDonatedTotal;
+    }
+
+    // Quota History
+    const historyItems = document.createElement("div");
+    historyItems.classList =
+        "border-2 w-full h-28 p-5 rounded-md";
+
+    historyItems.innerHTML = `
+    <p>$${newDonatedTotal.toFixed(2)} taka is donated for ${quotaTitle.innerText}</p>
+    <p class="">${new Date().toLocaleDateString()}</p>
+    `
+    const historyContainer = document.getElementById("history-section");
+    if (typeof (donationInput) === 'number' && !isNaN(donationInput)) {
+    historyContainer.insertBefore(historyItems, historyContainer.firstChild);
+    }
 })
 
 /* ***** - Main: History Functionals - ***** */
-document.getElementById("donation-history").classList.add("hidden");
+// document.getElementById("donation-history").classList.add("hidden");
 
 
 
