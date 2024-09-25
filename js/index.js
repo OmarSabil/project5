@@ -8,7 +8,12 @@ const noakhaliTitle = document.getElementById('noakhali-title');
 const feniTitle = document.getElementById('feni-title');
 const quotaTitle = document.getElementById('quota-title');
 
+const footer = document.getElementById('footer');
 
+const blogButton = document.getElementById('blog-btn')
+blogButton.addEventListener("click", function(){
+    window.location.href = "/blog.html";
+})
 /* ***** - Nav: Donation & History tab functionals - ***** */
 donationButton.addEventListener("click", function () {
     donationButton.classList.add(
@@ -58,6 +63,10 @@ historyButton.addEventListener("click", function () {
     historySection.classList.remove(
         "hidden"
     )
+    footer.classList.add(
+        "hidden"
+    )
+
 
 })
 
